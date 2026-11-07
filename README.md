@@ -1,3 +1,3 @@
 ## New Project
 
-- no chosen project type yet
+This contains chores 11-13 - repo + skeleton
