@@ -11,7 +11,12 @@ const app = express();
 
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: [CLIENT_URL],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 // Test route
@@ -30,7 +35,6 @@ app.get("/api/items", async (req, res) => {
     res.status(500).json({ message: "Error fetching items" });
   }
 });
-
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
